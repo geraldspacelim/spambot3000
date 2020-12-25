@@ -1,6 +1,8 @@
 import requests
 from telegram.ext import Updater, CommandHandler
+import os
 
+PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '1421363312:AAG2mrbnuErH4vTb4gzDEtagwSfZDWCRsA4'
 
 data = {}
@@ -57,7 +59,10 @@ def main():
     dispatcher.add_handler(CommandHandler("food", food))
     dispatcher.add_handler(CommandHandler("where", where))
     dispatcher.add_handler(CommandHandler("start", start))
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://safe-ocean-26439.herokuapp.com/' + TOKEN)
     get_data()
     updater.idle()
 
