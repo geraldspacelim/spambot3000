@@ -62,7 +62,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://quiet-chamber-90841.herokuapp.com/' + TOKEN)
+    updater.bot.setWebhook('https://secret-ravine-30924.herokuapp.com/' + TOKEN)
     get_data()
     updater.idle()
 
