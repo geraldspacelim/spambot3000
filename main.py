@@ -34,7 +34,7 @@ def food(update, context):
                 '\U00002023 Food Court 6\n' \
                 '\U00002023 Café @ Moberly'
     context.bot.send_message(chat_id=update.effective_chat.id, text="SP has a lot of places to eat at, here are a "
-                                                                    "few:\n\n" + food_list)
+                                                                    "few to choose from:\n\n" + food_list)
 
 
 def get_data():
