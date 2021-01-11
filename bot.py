@@ -48,6 +48,7 @@ def get_data():
 
 
 def start(update, context):
+    get_data()
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text='Welcome to SP Maps Assistant (SPAM)! You may ask me a random venue '
                                   'like this (e.g. /where T1033)')
@@ -63,7 +64,6 @@ def main():
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook('https://secret-ravine-30924.herokuapp.com/' + TOKEN)
-    get_data()
     updater.idle()
 
 
